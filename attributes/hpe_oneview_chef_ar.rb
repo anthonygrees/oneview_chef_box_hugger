@@ -11,5 +11,5 @@ default['oneview']['network_set']      = 'ChefNetworkSet_3001'
 default['oneview']['fibre_channel']    = 'ChefFibre Channel A'
 default['oneview']['vlanId']           = '3001'
 
-# false - will delete ||  true - will not delete
-default['oneview']['network_config']   = false
+# Delete Network:: FALSE-Will Delete || TRUE-Will NOT Delete
+default['oneview']['network_config']   = true
