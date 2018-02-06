@@ -1,6 +1,6 @@
 name 'hpe_oneview_chef_ar'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Anthony Rees'
+maintainer_email 'anthony@chef.io'
 license 'All Rights Reserved'
 description 'Installs/Configures hpe_oneview_chef_ar'
 long_description 'Installs/Configures hpe_oneview_chef_ar'

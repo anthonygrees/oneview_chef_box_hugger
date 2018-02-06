@@ -10,11 +10,16 @@ my_client = {
     password: ENV['ONEVIEWSDK_PASSWORD']
   }
   
+  unless node['oneview']['network_config']
+    include_recipe 'hpe_oneview_chef_ar::network_delete'
+    return
+  end
+
   # Ethernet network that will be used for the examples below
   oneview_ethernet_network "#{node['oneview']['ethernet_name']}" do
     client my_client
     data(
-      vlanId: 3001,
+      vlanId: "#{node['oneview']['vlanId']}",
       purpose:  'General',
       smartLink:  false,
       privateNetwork:  false,
@@ -32,7 +37,7 @@ my_client = {
   end
   
   # FC network that will be used for the examples below
-  oneview_fc_network 'ChefFibre Channel A' do
+  oneview_fc_network "#{node['oneview']['fibre_channel']}" do
     client my_client
     data(
       fabricType: 'FabricAttach',
@@ -43,7 +48,7 @@ my_client = {
   # Example: Update the connection template for an ethernet network
   oneview_connection_template 'Update connection template for ChefEthernet_3001' do
     client my_client
-    associated_ethernet_network 'ChefEthernet_3001'
+    associated_ethernet_network "#{node['oneview']['ethernet_name']}"
     data(
       bandwidth: {
         maximumBandwidth: 13500,
@@ -55,14 +60,14 @@ my_client = {
   # Example: Reset the connection template for an ethernet network
   oneview_connection_template 'Reset connection template for ChefEthernet_3001' do
     client my_client
-    associated_ethernet_network 'ChefEthernet_3001'
+    associated_ethernet_network "#{node['oneview']['ethernet_name']}"
     action :reset
   end
   
   # Example: Update the connection template for a fiber channel network
   oneview_connection_template 'Update connection template for ChefFibre Channel A' do
     client my_client
-    associated_fc_network 'ChefFibre Channel A'
+    associated_fc_network "#{node['oneview']['fibre_channel']}"
     data(
       bandwidth: {
         maximumBandwidth: 1000 * 8, # 8Gb/s
@@ -74,6 +79,6 @@ my_client = {
   # Example: Reset the connection template for a fiber channel network
   oneview_connection_template 'Reset connection ChefFibre Channel A' do
     client my_client
-    associated_fc_network 'ChefFibre Channel A'
+    associated_fc_network "#{node['oneview']['fibre_channel']}"
     action :reset
   end
