@@ -10,17 +10,13 @@ my_client = {
     password: ENV['ONEVIEWSDK_PASSWORD']
   }
 
-# ICM (Interconnect Module) types
-icm_type_1 = 'Virtual Connect SE 40Gb F8 Module for Synergy'
-icm_type_2 = 'Virtual Connect SE 40Gb F8 Module for Synergy'
-
 # DATA FOR THE UPLINK SET
 connections_01 = [
-  { bay: 3, port: 'Q1', type: icm_type_1, enclosure_index: 1 },
-  { bay: 6, port: 'Q1', type: icm_type_1, enclosure_index: 1 }
+  { bay: "#{node['oneview']['side_a_bay']}", port: "#{node['oneview']['port']}", type: "#{node['oneview']['icm_type']}", enclosure_index: "#{node['oneview']['enclosure_index']}" },
+  { bay: "#{node['oneview']['side_b_bay']}", port: "#{node['oneview']['port']}", type: "#{node['oneview']['icm_type']}", enclosure_index: "#{node['oneview']['enclosure_index']}" }
 ]
 lig_01_uplink_01_data = {
-  name: 'ChefLogicalInterconnectGroup1 - UplinkSet1',
+  name: "#{node['oneview']['lig_uls_name']}",
   networkType: 'Ethernet',
   ethernetNetworkType: 'Tagged'
 }
@@ -28,7 +24,7 @@ lig_01_uplink_01_data = {
 networks_01 = ["#{node['oneview']['ethernet_name']}"]
 
 # Logical Interconnect Group 1
-oneview_logical_interconnect_group 'ChefLogicalInterconnectGroup1' do
+oneview_logical_interconnect_group "#{node['oneview']['lig_name']}" do
   client my_client
   api_variant 'Synergy'
   data(
@@ -38,8 +34,8 @@ oneview_logical_interconnect_group 'ChefLogicalInterconnectGroup1' do
      enclosureType: 'SY12000'
   )
   interconnects [
-    { bay: 3, type: icm_type_1, enclosure_index: 1 },
-    { bay: 6, type: icm_type_1, enclosure_index: 1 }
+    { bay: "#{node['oneview']['side_a_bay']}", type: "#{node['oneview']['icm_type']}", enclosure_index: "#{node['oneview']['enclosure_index']}" },
+    { bay: "#{node['oneview']['side_b_bay']}", type: "#{node['oneview']['icm_type']}", enclosure_index: "#{node['oneview']['enclosure_index']}" }
   ]
   uplink_sets [
     { data: lig_01_uplink_01_data, connections: connections_01, networks: networks_01 }

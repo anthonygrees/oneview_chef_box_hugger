@@ -17,8 +17,20 @@ export ONEVIEWSDK_SSL_ENABLED=false
 
 **Attributes that must be passed to Chef OneView:**
 
-    ['oneview']['ethernet_name'] = 'Ethernet Name'
-    ['oneview']['network_config'] = true
+    ['oneview']['ethernet_name']       = 'Ethernet Name'
+    ['oneview']['network_set']         = 'Network Name'
+    ['oneview']['fibre_channel']       = 'Fibre Channel Name'
+    ['oneview']['vlanId']              = 'vLan Number' i.e. 3001
+    ['oneview']['network_config']      = true
+    
+    ['oneview']['lig_name']            = 'Logical Interconnect Group Name'
+    ['oneview']['lig_uls_name']        = 'Logical Interconnect Group UplinkSet1 Name'
+    ['oneview']['icm_type']            = 'Interconnect Type'
+    ['oneview']['enclosure_index']     = 'Enclosure Index Nbr'
+    ['oneview']['side_a_bay']          = 'Nbr'  Note: Side A is 1,2 or 3
+    ['oneview']['side_b_bay']          = 'Nbr'  Note: Side B is 4,5 or 6
+    ['oneview']['port']                = 'Port' i.e. 'Q1' or 'Q1:1' or 'Q2'
+    ['oneview']['interconnect_config'] = false
 
 ## Recipes
 
@@ -32,6 +44,17 @@ This recipe creates the following based on the input attributes above:
 This recipe removes the created 'network' components. It is also called if you have set the attribute
 ```
 ['oneview']['network_config'] = false
+```
+
+### interconnect_config
+This recipe creates the following based on the input attributes above:
+- Logical Interconnect Group
+- Uplink Set
+
+### network_delete
+This recipe removes the created 'logical interconnect group' components. It is also called if you have set the attribute
+```
+['oneview']['interconnect_config'] = false
 ```
 
 # Testing
