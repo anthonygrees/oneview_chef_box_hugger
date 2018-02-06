@@ -10,6 +10,11 @@ my_client = {
     password: ENV['ONEVIEWSDK_PASSWORD']
   }
 
+unless node['oneview']['interconnect_config']
+    include_recipe 'hpe_oneview_chef_ar::interconnect_delete'
+    return
+end
+
 # DATA FOR THE UPLINK SET
 connections_01 = [
   { bay: "#{node['oneview']['side_a_bay']}", port: "#{node['oneview']['port']}", type: "#{node['oneview']['icm_type']}", enclosure_index: "#{node['oneview']['enclosure_index']}" },

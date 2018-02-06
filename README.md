@@ -21,7 +21,7 @@ export ONEVIEWSDK_SSL_ENABLED=false
     ['oneview']['network_set']         = 'Network Name'
     ['oneview']['fibre_channel']       = 'Fibre Channel Name'
     ['oneview']['vlanId']              = 'vLan Number' i.e. 3001
-    ['oneview']['network_config']      = true
+    ['oneview']['network_config']      = true or false
     
     ['oneview']['lig_name']            = 'Logical Interconnect Group Name'
     ['oneview']['lig_uls_name']        = 'Logical Interconnect Group UplinkSet1 Name'
@@ -30,7 +30,7 @@ export ONEVIEWSDK_SSL_ENABLED=false
     ['oneview']['side_a_bay']          = 'Nbr'  Note: Side A is 1,2 or 3
     ['oneview']['side_b_bay']          = 'Nbr'  Note: Side B is 4,5 or 6
     ['oneview']['port']                = 'Port' i.e. 'Q1' or 'Q1:1' or 'Q2'
-    ['oneview']['interconnect_config'] = false
+    ['oneview']['interconnect_config'] = true or false
 
 ## Recipes
 
@@ -51,7 +51,7 @@ This recipe creates the following based on the input attributes above:
 - Logical Interconnect Group
 - Uplink Set
 
-### network_delete
+### interconnect_delete
 This recipe removes the created 'logical interconnect group' components. It is also called if you have set the attribute
 ```
 ['oneview']['interconnect_config'] = false

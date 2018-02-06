@@ -10,7 +10,6 @@ default['oneview']['ethernet_name']    = 'ChefEthernet_3001'
 default['oneview']['network_set']      = 'ChefNetworkSet_3001'
 default['oneview']['fibre_channel']    = 'ChefFibre Channel A'
 default['oneview']['vlanId']           = '3001'
-
 # Delete Network:: FALSE-Will Delete || TRUE-Will NOT Delete
 default['oneview']['network_config']   = true
 
@@ -24,3 +23,5 @@ default['oneview']['enclosure_index']   = '1'
 default['oneview']['side_a_bay']        = '3'
 default['oneview']['side_b_bay']        = '6'
 default['oneview']['port']              = 'Q1'
+# Delete Interconnect:: FALSE-Will Delete || TRUE-Will NOT Delete
+default['oneview']['interconnect_config']   = false
