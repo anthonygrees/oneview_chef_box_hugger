@@ -3,20 +3,22 @@
 This cookbook provides recipes for the setup and conf of HPE OneView.
 
 ## Environment Variables
-
-- export ONEVIEWSDK_URL="https://oneviewIPaddress"
-- export ONEVIEWSDK_USER="OneViewUserName"
-- export ONEVIEWSDK_PASSWORD="Your_passoword"
-
+```
+export ONEVIEWSDK_URL="https://oneviewIPaddress"
+export ONEVIEWSDK_USER="OneViewUserName"
+export ONEVIEWSDK_PASSWORD="Your_passoword"
+```
 And if you want to turn off SSL (because of self-signed certs)
-- export ONEVIEWSDK_SSL_ENABLED=false
+```
+export ONEVIEWSDK_SSL_ENABLED=false
+```
 
 ## Attributes
 
 **Attributes that must be passed to Chef OneView:**
 
-    default['oneview']['ethernet_name'] = 'Ethernet Name'
-    default['oneview']['network_config'] = true
+    ['oneview']['ethernet_name'] = 'Ethernet Name'
+    ['oneview']['network_config'] = true
 
 ## Recipes
 
