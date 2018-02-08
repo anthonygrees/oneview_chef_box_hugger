@@ -64,10 +64,13 @@ This recipe removes the created 'logical interconnect group' components. It is a
 ```
 ### scope_config
 NOTE: Support only in API300 onwards.
-This recipe creates the scope
+This recipe creates the scope.
 
 ### scope_delete
-This recipe deletes the scope
+This recipe deletes the scope.  It is also called if you have set the attribute
+```
+['oneview']['scope_config'] = false
+```
 
 # Testing
 
