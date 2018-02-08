@@ -24,4 +24,9 @@ default['oneview']['side_a_bay']        = '3'
 default['oneview']['side_b_bay']        = '6'
 default['oneview']['port']              = 'Q1'
 # Delete Interconnect:: FALSE-Will Delete || TRUE-Will NOT Delete
-default['oneview']['interconnect_config']   = false
+default['oneview']['interconnect_config']   = true
+
+# Scope
+
+default['oneview']['scope_1']           = 'Scope1'
+default['oneview']['scope_1']           = 'Scope2'

@@ -1,6 +1,8 @@
 # HPE OneView Chef Cookbook
 
-This cookbook provides recipes for the setup and conf of HPE OneView.
+This cookbook provides recipes for the setup and configuration of HPE OneView.
+
+HPE OneView provides a simple, consumer-inspired user experience that dramatically accelerates the everyday tasks of a Composable Infrastructure.  By changing the focus from 'how devices are managed' to 'how people work', HPE OneView delivers a software-defined management platform that is extensible and easy to use.
 
 ## Environment Variables
 ```
@@ -32,6 +34,10 @@ export ONEVIEWSDK_SSL_ENABLED=false
     ['oneview']['port']                = 'Port' i.e. 'Q1' or 'Q1:1' or 'Q2'
     ['oneview']['interconnect_config'] = true or false
 
+    ['oneview']['scope_1']             = 'Scope Name'
+    ['oneview']['scope_2']             = 'Scope Name'
+    ['oneview']['scope_config']        = true or false
+
 ## Recipes
 
 ### network_config
@@ -56,6 +62,12 @@ This recipe removes the created 'logical interconnect group' components. It is a
 ```
 ['oneview']['interconnect_config'] = false
 ```
+### scope_config
+NOTE: Support only in API300 onwards.
+This recipe creates the scope
+
+### scope_delete
+This recipe deletes the scope
 
 # Testing
 
