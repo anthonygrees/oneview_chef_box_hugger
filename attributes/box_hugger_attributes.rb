@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: hpe_oneview_chef_ar
+# Cookbook Name:: oneview_chef_box_hugger
 # Attribute:: default
 #
 # Copyright (c) 2017 Chef, All Rights Reserved.

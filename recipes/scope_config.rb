@@ -1,5 +1,5 @@
 
-# Cookbook Name:: hpe_oneview_chef_ar
+# Cookbook Name:: oneview_chef_box_hugger
 # Recipe:: scope_config
 #
 # Copyright (c) 2017 Chef, All Rights Reserved.
@@ -13,7 +13,7 @@ my_client = {
   }
 
 unless node['oneview']['scope_config']
-    include_recipe 'hpe_oneview_chef_ar::scope_delete'
+    include_recipe 'oneview_chef_box_hugger::scope_delete'
     return
 end
 

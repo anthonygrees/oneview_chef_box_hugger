@@ -1,5 +1,5 @@
 #
-# Cookbook:: hpe_oneview_chef_ar
+# Cookbook:: oneview_chef_box_hugger
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
@@ -9,5 +9,5 @@
 
 
 
-include_recipe 'hpe_oneview_chef_ar::network_config'
-include_recipe 'hpe_oneview_chef_ar::interconnect_config'
+include_recipe 'oneview_chef_box_hugger::network_config'
+include_recipe 'oneview_chef_box_hugger::interconnect_config'

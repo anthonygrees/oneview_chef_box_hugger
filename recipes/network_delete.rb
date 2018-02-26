@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: hpe_oneview_chef_ar
+# Cookbook Name:: oneview_chef_box_hugger
 # Recipe:: network_delete
 #
 # Copyright (c) 2018 Chef, All Rights Reserved.

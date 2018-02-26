@@ -1,4 +1,4 @@
-# HPE OneView Chef Cookbook
+#  Chef Box Hugger Cookbook for HPE OneView
 
 This cookbook provides recipes for the setup and configuration of HPE OneView.
 
