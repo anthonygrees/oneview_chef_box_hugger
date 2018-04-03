@@ -30,3 +30,15 @@ default['oneview']['interconnect_config']   = true
 
 default['oneview']['scope_1']           = 'Scope1'
 default['oneview']['scope_1']           = 'Scope2'
+
+#Enclosure Group
+default['oneview']['enclosure_group_name'] = 'ChefEnclosureGroup1'
+# Delete Server Profile:: FALSE-Will Delete || TRUE-Will NOT Delete
+default['oneview']['enclosure_group_config'] = true
+
+#Server Profile
+default['oneview']['server_profile_name']  = 'Docker_Worker_Profile'
+default['oneview']['server_hardware_type'] = "SY 480 Gen10 1"
+# Delete Server Profile:: FALSE-Will Delete || TRUE-Will NOT Delete
+default['oneview']['server_profile_config'] = true
+
