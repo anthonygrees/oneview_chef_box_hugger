@@ -11,3 +11,5 @@
 
 include_recipe 'oneview_chef_box_hugger::network_config'
 include_recipe 'oneview_chef_box_hugger::interconnect_config'
+include_recipe 'oneview_chef_box_hugger::enclosure_group_config'
+include_recipe 'oneview_chef_box_hugger::server_profile_config'
