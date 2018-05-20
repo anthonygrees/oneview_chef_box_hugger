@@ -19,6 +19,8 @@ export ONEVIEWSDK_SSL_ENABLED=false
 
 **Attributes that must be passed to Chef OneView:**
 
+    ['oneview']['do_not_delete']       = true or false  ## Delete All Configuration
+
     ['oneview']['ethernet_name']       = 'Ethernet Name'
     ['oneview']['network_set']         = 'Network Name'
     ['oneview']['fibre_channel']       = 'Fibre Channel Name'
@@ -37,6 +39,9 @@ export ONEVIEWSDK_SSL_ENABLED=false
     ['oneview']['scope_1']             = 'Scope Name'
     ['oneview']['scope_2']             = 'Scope Name'
     ['oneview']['scope_config']        = true or false
+
+    ['oneview']['server_profile_name']  = 'Server Profile Name'
+    ['oneview']['server_hardware_type'] = 'HPE Server Type'
 
 ## Recipes
 
@@ -71,6 +76,15 @@ This recipe deletes the scope.  It is also called if you have set the attribute
 ```
 ['oneview']['scope_config'] = false
 ```
+### server_profile_config
+This recipe creates the following based on the input attributes above:
+- Server Profile
+
+### server_profile__delete
+This recipe deletes the scope.  It is also called if you have set the attribute
+```
+['oneview']['server_profile_config'] = false
+```
 
 # Testing
 
@@ -79,6 +93,8 @@ This cookbook uses the testing style documented here: https://github.com/chef-co
 ## License and Author
 
 * Author:: Anthony Rees <anthony@chef.io>
+
+* Contributions:: Nigel Wright - https://github.com/nwright-nz
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

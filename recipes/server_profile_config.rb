@@ -20,7 +20,7 @@ oneview_server_profile "#{node['oneview']['server_profile_name']}" do
   client my_client
   data(name: "#{node['oneview']['server_profile_name']}")
   enclosure_group "#{node['oneview']['enclosure_group_name']}" 
-  server_hardware_type "SY 480 Gen10 1"
+  server_hardware_type "#{node['oneview']['server_hardware_type']}"
   ethernet_network_connections( "#{node['oneview']['ethernet_name']}": { 
       name: "#{node['oneview']['ethernet_name']}" 
     }
