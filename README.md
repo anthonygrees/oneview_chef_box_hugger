@@ -15,6 +15,11 @@ And if you want to turn off SSL (because of self-signed certs)
 export ONEVIEWSDK_SSL_ENABLED=false
 ```
 
+## Run the Code
+```
+$ chef-client -z -o oneview_chef_box_hugger::default
+```
+
 ## Attributes
 
 **Attributes that must be passed to Chef OneView:**
@@ -94,7 +99,8 @@ This cookbook uses the testing style documented here: https://github.com/chef-co
 
 * Author:: Anthony Rees <anthony@chef.io>
 
-* Contributions:: Nigel Wright - https://github.com/nwright-nz
+* Awesome Contributions From:: 
+*** Nigel Wright - https://github.com/nwright-nz
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
