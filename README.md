@@ -91,6 +91,11 @@ This recipe deletes the scope.  It is also called if you have set the attribute
 ['oneview']['server_profile_config'] = false
 ```
 
+## Video Demo
+The following video shows the code in action.
+
+[![Alt text](https://img.youtube.com/vi/mMSjTjYKxPw/0.jpg)](https://youtu.be/mMSjTjYKxPw)
+
 # Testing
 
 This cookbook uses the testing style documented here: https://github.com/chef-cookbooks/community_cookbook_documentation/blob/master/TESTING.MD
