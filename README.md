@@ -98,6 +98,8 @@ The following video shows the code in action.
 
 # Testing
 
+Use the HPE OneView plugin for InSpec.  A demonstration of the code is here - https://github.com/anthonygrees/oneview_inspec_box_hugger
+
 This cookbook uses the testing style documented here: https://github.com/chef-cookbooks/community_cookbook_documentation/blob/master/TESTING.MD
 
 ## License and Author
