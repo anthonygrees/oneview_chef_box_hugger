@@ -14,6 +14,18 @@ And if you want to turn off SSL (because of self-signed certs)
 ```
 export ONEVIEWSDK_SSL_ENABLED=false
 ```
+## OneView SDK for Ruby
+Require the gem in your Gemfile:
+```
+$ gem 'oneview-sdk', '~> 5.2'
+$ bundle install
+```
+
+Or run the command:
+```
+$ gem install oneview-sdk
+```
+https://github.com/HewlettPackard/oneview-sdk-ruby
 
 ## Run the Code
 ```
